@@ -75,3 +75,37 @@
 # else:
 #     print("Por favor, ingrese una contraseña de entre 8 y 14 caracteres.")
 
+
+# 6) Escribir un programa que tome la lista numeros_aleatorios, calcule su moda, su mediana y su media y las compare para determinar 
+# si hay sesgo positivo, negativo o no hay sesgo. Imprimir el resultado por pantalla.
+
+# Agregamos las librerías:
+from statistics import mode, median, mean
+from random import randint
+
+# Creamos lista con 50 números aleatorios:
+numeros_aleatorios = [randint(1, 100) for i in range(50)] 
+
+moda = mode(numeros_aleatorios) # Moda: Valor más frecuente
+mediana = median(numeros_aleatorios) # Mediana: Valor central de los datos (entre min y max?).
+media = mean(numeros_aleatorios) # Media aritmética: Valor intermedio.
+
+# Imprimimos resultados:
+print(f"Listado de números aleatorios: {sorted(numeros_aleatorios)} \n")
+
+print(f"Moda: {moda} - Mediana: {mediana} - Media: {media} \n")
+
+# Sesgo positivo o a la derecha: cuando la media es mayor que la mediana y, a su vez, la mediana es mayor que la moda. 
+# Sesgo negativo o a la izquierda: cuando la media es menor que la mediana y, a su vez, la mediana es menor que la moda. 
+# Sin sesgo: cuando la media, la mediana y la moda son iguales. 
+
+if media > mediana and mediana > moda:
+    print("Hay sesgo POSITIVO.")
+elif media < mediana and mediana < moda:
+    print("Hay sesgo NEGATIVO.")
+elif media == mediana and mediana == moda:
+    print("No hay sesgo.")
+else:
+    print("Sesgo confuso.")
+
+
