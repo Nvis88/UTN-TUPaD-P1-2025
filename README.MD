@@ -4,7 +4,7 @@
 
 ## ✨ Estudiante  
 - **Nombre:** VISINTIN, Nicolás H.
-- **Comisión:** M2025-23 *
+- **Comisión:** M2025-23
 
 ## 📂 Descripción del Repositorio  
 Este repositorio almacena todas los trabajos prácticos realizados durante la cursada de **Programación 1**.  
