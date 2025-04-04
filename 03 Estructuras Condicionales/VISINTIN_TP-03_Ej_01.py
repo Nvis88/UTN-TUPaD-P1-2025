@@ -76,36 +76,149 @@
 #     print("Por favor, ingrese una contraseña de entre 8 y 14 caracteres.")
 
 
-# 6) Escribir un programa que tome la lista numeros_aleatorios, calcule su moda, su mediana y su media y las compare para determinar 
-# si hay sesgo positivo, negativo o no hay sesgo. Imprimir el resultado por pantalla.
+# # 6) Escribir un programa que tome la lista numeros_aleatorios, calcule su moda, su mediana y su media y las compare para determinar 
+# # si hay sesgo positivo, negativo o no hay sesgo. Imprimir el resultado por pantalla.
 
-# Agregamos las librerías:
-from statistics import mode, median, mean
-from random import randint
+# # Agregamos las librerías:
+# from statistics import mode, median, mean
+# from random import randint
 
-# Creamos lista con 50 números aleatorios:
-numeros_aleatorios = [randint(1, 100) for i in range(50)] 
+# # Creamos lista con 50 números aleatorios:
+# numeros_aleatorios = [randint(1, 100) for i in range(50)] 
 
-moda = mode(numeros_aleatorios) # Moda: Valor más frecuente
-mediana = median(numeros_aleatorios) # Mediana: Valor central de los datos (entre min y max?).
-media = mean(numeros_aleatorios) # Media aritmética: Valor intermedio.
+# moda = mode(numeros_aleatorios) # Moda: Valor más frecuente
+# mediana = median(numeros_aleatorios) # Mediana: Valor central de los datos (entre min y max?).
+# media = mean(numeros_aleatorios) # Media aritmética: Valor intermedio.
 
-# Imprimimos resultados:
-print(f"Listado de números aleatorios: {sorted(numeros_aleatorios)} \n")
+# # Imprimimos resultados:
+# print(f"Listado de números aleatorios: {sorted(numeros_aleatorios)} \n")
 
-print(f"Moda: {moda} - Mediana: {mediana} - Media: {media} \n")
+# print(f"Moda: {moda} - Mediana: {mediana} - Media: {media} \n")
 
-# Sesgo positivo o a la derecha: cuando la media es mayor que la mediana y, a su vez, la mediana es mayor que la moda. 
-# Sesgo negativo o a la izquierda: cuando la media es menor que la mediana y, a su vez, la mediana es menor que la moda. 
-# Sin sesgo: cuando la media, la mediana y la moda son iguales. 
+# # Sesgo positivo o a la derecha: cuando la media es mayor que la mediana y, a su vez, la mediana es mayor que la moda. 
+# # Sesgo negativo o a la izquierda: cuando la media es menor que la mediana y, a su vez, la mediana es menor que la moda. 
+# # Sin sesgo: cuando la media, la mediana y la moda son iguales. 
 
-if media > mediana and mediana > moda:
-    print("Hay sesgo POSITIVO.")
-elif media < mediana and mediana < moda:
-    print("Hay sesgo NEGATIVO.")
-elif media == mediana and mediana == moda:
-    print("No hay sesgo.")
-else:
-    print("Sesgo confuso.")
+# if media > mediana and mediana > moda:
+#     print("Hay sesgo POSITIVO.")
+# elif media < mediana and mediana < moda:
+#     print("Hay sesgo NEGATIVO.")
+# elif media == mediana and mediana == moda:
+#     print("No hay sesgo.")
+# else:
+#     print("Sesgo confuso.")
 
 
+# # 7) Escribir un programa que solicite una frase o palabra al usuario. Si el string ingresado termina con vocal, 
+# # añadir un signo de exclamación al final e imprimir el string resultante por pantalla; en caso contrario, dejar 
+# # el string tal cual lo ingresó el usuario e imprimirlo por pantalla.
+
+# # Defino variable que almacena frase o palabra ingresada por el usuario:
+# cadena = input("Ingrese una frase o palabra: ")
+# # Variable con último caracter de la variable cadena:
+# ultima_letra = str.lower(cadena[-1])
+
+# # Analizo última letra y devuelvo resultado:
+# if ultima_letra in 'aeiou':
+#     print(f"{cadena}!")
+# else:
+#     print(cadena)
+
+"""
+8) Escribir un programa que solicite al usuario que ingrese su nombre y el número 1, 2 o 3 dependiendo de la opción que desee:
+1. Si quiere su nombre en mayúsculas. Por ejemplo: PEDRO.
+2. Si quiere su nombre en minúsculas. Por ejemplo: pedro.
+3. Si quiere su nombre con la primera letra mayúscula. Por ejemplo: Pedro.
+El programa debe transformar el nombre ingresado de acuerdo a la opción seleccionada por el usuario e imprimir el resultado por pantalla. 
+Nota: investigue uso de las funciones upper(), lower() y title() de Python para convertir entre mayúsculas y minúsculas. 
+"""
+
+# nombre = input("Ingrese su nombre: ")
+# opcion = int(input("Ingrese una opción: 1 (MAYÚSCULAS) - 2 (minúsculas) - 3 (Tipo Oración):"))
+
+# if opcion == 1:
+#     resultado = str.upper(nombre)
+# elif opcion == 2:
+#     resultado = str.lower(nombre)
+# elif opcion == 3:
+#     resultado = str.title(nombre)
+# else:
+#     print("Opción incorrecta")
+#     resultado = nombre
+
+# print(resultado)
+
+"""
+9) Escribir un programa que pida al usuario la magnitud de un terremoto, clasifique la magnitud en una de las siguientes categorías 
+según la escala de Richter e imprima el resultado por pantalla:
+● Menor que 3: "Muy leve" (imperceptible).
+● Mayor o igual que 3 y menor que 4: "Leve" (ligeramente perceptible).
+● Mayor o igual que 4 y menor que 5: "Moderado" (sentido por personas, pero generalmente no causa daños).
+● Mayor o igual que 5 y menor que 6: "Fuerte" (puede causar daños en estructuras débiles).
+● Mayor o igual que 6 y menor que 7: "Muy Fuerte" (puede causar daños significativos).
+● Mayor o igual que 7: "Extremo" (puede causar graves daños a gran escala). """
+
+# terremoto = float(input("Ingrese magnitud terremoto: "))
+
+# if terremoto < 3:
+#     nivel = "Muy leve"
+# elif 3 <= terremoto < 4:
+#     nivel = "Leve"
+# elif 4 <= terremoto < 5:
+#     nivel = "Moderado"
+# elif 5 <= terremoto < 6:
+#     nivel = "Fuerte"
+# elif 6 <= terremoto < 7:
+#     nivel = "Muy Fuerte"
+# elif terremoto >= 7:
+#     nivel = "Extremo"
+
+# print(f"Magnitud del Terremoto: {nivel} ({terremoto})")
+
+"""
+10) Utilizando la información aportada en la siguiente tabla sobre las estaciones del año Periodo del año
+Escribir un programa que pregunte al usuario en cuál hemisferio se encuentra (N/S), qué mes del año es y qué día es. 
+El programa deberá utilizar esa información para imprimir por pantalla si el usuario se encuentra en otoño, invierno, primavera o verano."""
+
+# hemisferio = str.upper(input("Ingrese en qué hemisferio vive: N (Norte) - S (Sur): "))
+# mes = int(input("Ingrese mes: (1 a 12): "))
+# dia = int(input("Ingrese día: (1 a 31): "))
+
+# if not(hemisferio in "SN"):
+#     print("Hemisferio incorrecto.")
+#     exit()
+
+# if (mes == 2 and dia > 29) or ((mes == 4 or mes == 6 or mes == 9 or mes == 11) and dia > 30) or dia > 31:
+#     print("Fecha incorrecta.")
+#     exit()
+
+
+# # Fecha 21/12 al 20/03
+# if (mes == 12 and dia >= 21) or (mes <= 2) or (mes == 3 and dia <= 20):
+#     if hemisferio == "N":
+#         estacion = "Invierno"
+#     elif hemisferio == "S":
+#         estacion = "Verano"
+
+# # Fecha 21/03 al 20/06
+# if (mes == 3 and dia >= 21) or (mes <= 5) or (mes == 6 and dia <= 20):
+#     if hemisferio == "N":
+#         estacion = "Primavera"
+#     elif hemisferio == "S":
+#         estacion = "Otoño"
+
+# # Fecha 21/06 al 20/09
+# if (mes == 6 and dia >= 21) or (mes <= 8) or (mes == 9 and dia <= 20):
+#     if hemisferio == "N":
+#         estacion = "Verano"
+#     elif hemisferio == "S":
+#         estacion = "Invierno"
+
+# # Fecha 21/09 al 20/12
+# if (mes == 9 and dia >= 21) or (mes <= 11) or (mes == 12 and dia <= 20):
+#     if hemisferio == "N":
+#         estacion = "Otoño"
+#     elif hemisferio == "S":
+#         estacion = "Primavera"
+
+# print(f"La fecha {dia}/{mes}, en el Hemisferio {"SUR" if hemisferio == "S" else "NORTE"} corresponde a la Estación {estacion}")
